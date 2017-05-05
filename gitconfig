@@ -1,0 +1,74 @@
+[user]
+  name = Brendan Buckingham
+  email = brendan.buckingham@gmail.com
+[color]
+  diff = auto
+  ui = true
+[apply]
+  whitespace = nowarn
+[alias]
+  b = branch
+  ;Returns the name of the current branch
+  branch-name = rev-parse --abbrev-ref HEAD
+  bn = !git branch-name
+  bv = branch -vv
+  browse = !hub browse
+  ci = !hub ci-status
+  co = checkout
+  cm = commit
+  cp = cherry-pick
+  compare = !hub compare
+  ;Deletes a branch
+  db = branch -D
+  dc = diff --cached
+  df = diff --word-diff --color-words
+  develop = checkout develop
+  ds = diff --stat origin/develop
+  dm = diff --stat origin/master
+  drb = push origin --delete
+  dup = !git checkout develop && git pull && git checkout -
+  fo = fetch origin
+  ;Searches the log for a specific string
+  ;Useful for finding commit messages of cherry-picks
+  ;Example
+  ;glog "log message to search for"
+	glog = log -E -i --grep
+  ;This will find all branches that have a <sha1>
+  has-commit = branch -r --contains
+  hfpr = !hub pull-request -b
+  l = "!. ~/.githelpers && pretty_git_log"
+  ld = "!git log origin/develop..$(git branch-name)"
+  lm = "!git log origin/master..$(git branch-name)"
+  master = checkout master
+  mbff = "!git merge $(git branch-name) --ff-only"
+  mup = !git checkout master && git pull && git checkout -
+  ms = diff --stat origin/master
+  profile = !open https://github.com/brendanwb
+  pfwl = "!git push --force-with-lease origin $(git branch-name)"
+  newpr = !hub pull-request
+  publish = "!git push --set-upstream origin $(git branch-name)"
+  pulls = !hub browse -- pulls
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase -i
+  ;Creates a nice looking log to see where your commits are.
+  sla = log --oneline --decorate --graph --all
+  sd = stash drop
+  sl = stash list
+  sp = stash pop
+  t = tag
+  td = tag -d
+  unchange = checkout --
+  uncommit = reset --soft HEAD^
+  upstream = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
+  unstage = reset
+  wf = "!open https://github.com/thoughtbot/guides/tree/master/protocol/git#merge"
+  wiki = !hub browse -- wikis
+[github]
+  user = brendanwb
+[push]
+  default = upstream
+[fetch]
+  prune = true
+[core]
+	editor = vim

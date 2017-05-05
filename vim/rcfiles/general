@@ -1,0 +1,41 @@
+" General configurations
+"------------------------
+
+set nocompatible              " be iMproved, required
+set history=1000              " Remember last 1000 commands
+set scrolloff=4               " Keep at least 4 lines below cursor
+set expandtab                 " Convert <tab> to spaces (2 or 4)
+set tabstop=2                 " Two spaces per tab as default
+
+let g:netrw_winsize = 25
+
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <leader>c :CtrlPTag<cr>
+map <Leader>i mmgg=G`m<CR>
+map <Leader>n :Vexplore<CR>
+map <Leader>p :set paste<CR><esc>"*]p:set nopaste<CR><esc>:retab<cr>
+map <Leader>dr :e ~/Dropbox<cr>
+map <Leader>dn :e ~/Dropbox/notes/<cr>
+map <Leader>gn :sp ~/Dropbox/programming_notes/git.txt<cr>
+map <Leader>vrc :sp ~/.vim/.vimrc<cr>
+map <Leader>gcf :sp ~/.gitconfig<cr>
+map <Leader>vs :vsp<cr>
+map <Leader>ss :sp<cr>
+map <Leader>bb :!bundle install<cr>
+map <Leader>rs :!touch ~/wellbe/tmp/restart.txt<cr>
+"<C-h> = Ctrl+h
+map <C-h> :nohl<cr>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>P "+P
+vmap <Leader>P "+P
+
+set relativenumber
+
+" Persistent undo
+let undodir = expand('~/.undo-vim')
+if !isdirectory(undodir)
+  call mkdir(undodir)
+endif
+set undodir=~/.undo-vim
+set undofile " Create FILE.un~ files for persistent undo

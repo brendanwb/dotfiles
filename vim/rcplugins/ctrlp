@@ -1,0 +1,3 @@
+" Ctrl+P - Fuzzy file search for Vim
+
+Plugin 'ctrlp.vim'
