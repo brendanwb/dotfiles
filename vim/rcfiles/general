@@ -3,16 +3,17 @@
 
 set nocompatible              " be iMproved, required
 set history=1000              " Remember last 1000 commands
-set scrolloff=4               " Keep at least 4 lines below cursor
-set expandtab                 " Convert <tab> to spaces (2 or 4)
+set noswapfile
 set tabstop=2                 " Two spaces per tab as default
+set softtabstop=2
+set shiftwidth=2
+set expandtab                 " Convert <tab> to spaces (2 or 4)
 
-let g:netrw_winsize = 25
-
+set clipboard=unnamed
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <leader>c :CtrlPTag<cr>
+map <Leader>bi :PluginInstall<cr>
 map <Leader>i mmgg=G`m<CR>
-map <Leader>n :Vexplore<CR>
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<CR><esc>:retab<cr>
 map <Leader>dr :e ~/Dropbox<cr>
 map <Leader>dn :e ~/Dropbox/notes/<cr>

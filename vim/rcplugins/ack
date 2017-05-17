@@ -1,0 +1,4 @@
+" Search for files Ack
+" https://github.com/mileszs/ack.vim
+
+Plugin 'mileszs/ack.vim'

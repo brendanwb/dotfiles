@@ -1,0 +1,4 @@
+" Perform all your vim insert mode completions with Tab
+" https://github.com/ervandew/supertab
+
+Plugin 'ervandew/supertab'

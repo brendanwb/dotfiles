@@ -1,0 +1,3 @@
+" rails.vim: Ruby on Rails power tools
+
+Plugin 'tpope/vim-rails'

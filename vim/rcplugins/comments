@@ -1,0 +1,5 @@
+" Comment code
+
+Plugin 'tpope/vim-commentary'
+
+map <Leader>/ gcc<CR>
