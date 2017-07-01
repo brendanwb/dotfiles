@@ -1,0 +1,10 @@
+snippet pry
+	require "pry"; binding.pry
+snippet log
+	Rails.logger.debug "#"*100
+	Rails.logger.debug ${1:code}
+	Rails.logger.debug "#"*100
+snippet slog
+	Sidekiq.logger.info "#"*100
+	Sidekiq.logger.info ${1:code}
+	Sidekiq.logger.info "#"*100

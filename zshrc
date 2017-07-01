@@ -106,6 +106,7 @@ alias run-wellbe-tests="RAILS_ENV=test bundle exec rake db:test:load && RAILS_EN
 alias wellbe-refresh-passwords="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake pgbackups:smart_import && bundle exec rake db:migrate && rails r 'script/update_dev_passwords.rb' && touch tmp/restart.txt && RAILS_ENV=test bundle exec rake db:test:load && RAILS_ENV=test bundle exec rake db:fixtures:load"
 alias tests="bundle exec guard"
 alias ios-simulator-reset="xcrun simctl erase all"
+alias ios-simulator-open="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 # create new tmux instances
 tm() {
   tmux new -s "$*"
