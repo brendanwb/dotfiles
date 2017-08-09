@@ -24,6 +24,7 @@ map <Leader>vs :vsp<cr>
 map <Leader>ss :sp<cr>
 map <Leader>bb :!bundle install<cr>
 map <Leader>rs :!touch ~/wellbe/tmp/restart.txt<cr>
+map <Leader>nh :help netrw-quickmap<cr>
 "<C-h> = Ctrl+h
 map <C-h> :nohl<cr>
 vmap <Leader>y "+y
@@ -32,6 +33,7 @@ nmap <Leader>P "+P
 vmap <Leader>P "+P
 
 set relativenumber
+set number
 
 " Persistent undo
 let undodir = expand('~/.undo-vim')
