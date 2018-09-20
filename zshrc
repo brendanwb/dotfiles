@@ -10,7 +10,7 @@ export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
+source /Users/brendanbuckingham/.asdf/asdf.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brendanbuckingham/.oh-my-zsh
@@ -62,10 +62,13 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search pow brew gem knife last-working-dir web-search tmuxinator)
+plugins=(git history-substring-search pow brew gem knife last-working-dir web-search tmuxinator zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# Disable all highltighters of the zsh-syntax-highlighting plugin. The plugin is
+# required due to some bug in history-substring-search.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=()
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -113,6 +116,7 @@ alias wellbe-refresh-passwords="bundle exec rake db:drop && bundle exec rake db:
 alias tests="bundle exec guard"
 alias ios-simulator-reset="xcrun simctl erase all"
 alias ios-simulator-open="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias sorted_history="ruby ~/Dropbox/Scripts/sort_zsh_history.rb"
 # create new tmux instances
 tm() {
   tmux new -s "$*"
