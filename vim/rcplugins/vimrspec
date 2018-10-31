@@ -1,0 +1,10 @@
+" Add rspec commands for vim
+" https://github.com/thoughtbot/vim-rspec
+
+Plugin 'thoughtbot/vim-rspec'
+
+" RSpec.vim mappings
+map <Leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>

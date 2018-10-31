@@ -98,7 +98,6 @@ export EDITOR='vim'
  bindkey '^R' history-incremental-search-backward
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -110,13 +109,18 @@ export EDITOR='vim'
 alias zshconfig="vim ~/.zshrc"
 alias add-ssh="ssh-add ~/.ssh/id_rsa"
 alias be="bundle exec"
-alias refresh-rails="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake pgbackups:smart_import && bundle exec rake db:migrate && bundle exec rake db:test:prepare && touch tmp/restart.txt"
-alias run-wellbe-tests="RAILS_ENV=test bundle exec rake db:test:load && RAILS_ENV=test bundle exec rake minitest:all && RAILS_ENV=test bundle exec rake spec:javascript"
-alias wellbe-refresh-passwords="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake pgbackups:smart_import && bundle exec rake db:migrate && rails r 'script/update_dev_passwords.rb' && touch tmp/restart.txt && RAILS_ENV=test bundle exec rake db:test:load && RAILS_ENV=test bundle exec rake db:fixtures:load"
+alias poprod="ssh brendan011@34.212.87.170 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
+alias postaging="ssh brendan011@54.215.212.11 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
+alias poalexa="ssh brendan011@34.238.121.56 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
+alias po-refresh-local-app-db="RAILS_ENV=development bundle exec rake db:drop && RAILS_ENV=development bundle exec rake db:create && psql -U brendanbuckingham uapp_dev <prod.sql"
 alias tests="bundle exec guard"
 alias ios-simulator-reset="xcrun simctl erase all"
 alias ios-simulator-open="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias sorted_history="ruby ~/Dropbox/Scripts/sort_zsh_history.rb"
+alias start="vim ~/Dropbox/Docs/MorningChecklist.md"
+alias railsrestart="touch tmp/restart.txt"
+alias todos="vim ~/Dropbox/Docs/automation-and-improvment-todos.md"
+alias blogideas="vim ~/Dropbox/Docs/notes/blog_post_ideas.txt"
 # create new tmux instances
 tm() {
   tmux new -s "$*"

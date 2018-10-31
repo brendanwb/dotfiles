@@ -1,0 +1,4 @@
+" Add coffeescript syntax highlighting
+" https://github.com/kchmck/vim-coffee-script
+
+Plugin 'kchmck/vim-coffee-script'

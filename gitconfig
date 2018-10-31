@@ -22,11 +22,8 @@
   db = branch -D
   dc = diff --cached
   df = diff --word-diff --color-words
-  develop = checkout develop
-  ds = diff --stat origin/develop
   dm = diff --stat origin/master
   drb = push origin --delete
-  dup = !git checkout develop && git pull && git checkout -
   fo = fetch origin
   ;Searches the log for a specific string
   ;Useful for finding commit messages of cherry-picks
@@ -37,14 +34,14 @@
   has-commit = branch -r --contains
   hfpr = !hub pull-request -b
   l = "!. ~/.githelpers && pretty_git_log"
-  ld = "!git log origin/develop..$(git branch-name)"
   lm = "!git log origin/master..$(git branch-name)"
   master = checkout master
-  mbff = "!git merge $(git branch-name) --ff-only"
+  mbff = "!git merge $1 --ff-only"
   mup = !git checkout master && git pull && git checkout -
   ms = diff --stat origin/master
   profile = !open https://github.com/brendanwb
   pfwl = "!git push --force-with-lease origin $(git branch-name)"
+  pnv = push --no-verify
   newpr = !hub pull-request
   publish = "!git push --set-upstream origin $(git branch-name)"
   pulls = !hub browse -- pulls
