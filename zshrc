@@ -9,7 +9,7 @@ zplug load --verbose
 export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH:/usr/local/Cellar/postgresql/10.5/bin"
 source /Users/brendanbuckingham/.asdf/asdf.sh
 
 # Path to your oh-my-zsh installation.
@@ -109,8 +109,8 @@ export EDITOR='vim'
 alias zshconfig="vim ~/.zshrc"
 alias add-ssh="ssh-add ~/.ssh/id_rsa"
 alias be="bundle exec"
-alias poprod="ssh brendan011@34.212.87.170 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
-alias postaging="ssh brendan011@54.215.212.11 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
+alias poprod="cx ssh -s 'UAPP (P4)' web"
+alias postaging="cx ssh -s 'UAPP (S4)' web"
 alias poalexa="ssh brendan011@34.238.121.56 -i ~/Dropbox/pure_oxygen_labs/89657_private_rsa.pem"
 alias po-refresh-local-app-db="RAILS_ENV=development bundle exec rake db:drop && RAILS_ENV=development bundle exec rake db:create && psql -U brendanbuckingham uapp_dev <prod.sql"
 alias tests="bundle exec guard"
@@ -118,9 +118,13 @@ alias ios-simulator-reset="xcrun simctl erase all"
 alias ios-simulator-open="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias sorted_history="ruby ~/Dropbox/Scripts/sort_zsh_history.rb"
 alias start="vim ~/Dropbox/Docs/MorningChecklist.md"
+alias stop="vim ~/Dropbox/Docs/AfternoonChecklist.md"
 alias railsrestart="touch tmp/restart.txt"
 alias todos="vim ~/Dropbox/Docs/automation-and-improvment-todos.md"
 alias blogideas="vim ~/Dropbox/Docs/notes/blog_post_ideas.txt"
+alias improvements="vim ~/Dropbox/Docs/notes/improvements_list.md"
+alias ngrok="~/./ngrok"
+alias update-ctags="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)"
 # create new tmux instances
 tm() {
   tmux new -s "$*"
